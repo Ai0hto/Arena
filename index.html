@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header">
+    <svg width="272" height="88" viewBox="0 0 272 88" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect width="272" height="88" fill="url(#pattern0)"/>
+        <defs>
+        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <use xlink:href="#image0_42_895" transform="matrix(0.00367647 0 0 0.0113636 -0.0625 -0.181818)"/>
+        </pattern>
+        <image id="image0_42_895" width="298" height="121" xlink:href="data:image/png;base64,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"/>
+        </defs>
+        </svg>
+        <div class="changer">
+            <p class="checkbox-month">Месяц</p>
+            <label class="checkbox-check" id="checkbox-check">
+                <input type = "checkbox" class = "switch__input" id="switch__input"/>
+                <span class = "switch__slider"> </span>
+              </label>
+            <p class="checkbox-day">День</p>
+        </div>
+    </div>
+        
+    <div class="tittle-container">
+        <h1 class="container__tittle">Ножничный электрический подъемник</h1>
+        <img src="img/first.png" alt="" class="first-img">
+    </div>
+
+    <div class="container mt-3 ">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="item-tittle ">Высота</th>
+                <th class="item-tittle ">ГП</th>
+                <th class="item-tittle ">Вес</th>
+                <th class="item-tittle " id="tittle-special">За месяц</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr>
+                <td class="">8 м</td>
+                <td class="">230 кг</td>
+                <td class="">100 кг </td>
+                <td class="" id="first-item-special__first-block">51 900 ₽</td>
+            </tr>
+            <tr>
+                <td class="">10 м</td>
+                <td class="">230 кг</td>
+                <td class="">100 кг</td>
+                <td class="" id="second-item-special__first-block">60 000 ₽</td>
+            </tr>
+            <tr>
+                <td class="">14 м</td>
+                <td class="">318 кг</td>
+                <td class="">100 кг</td>
+                <td class="" id="third-item-special__first-block">73 500 ₽</td>
+            </tr>
+            <tr>
+                <td class="">12 м</td>
+                <td class="">320 кг</td>
+                <td class="">100 кг</td>
+                <td class="" id="fourth-item-special__first-block">96 000 ₽</td>
+            </tr>
+            <tr>
+                <td class="pb-0">16 м</td>
+                <td class="pb-0">320 кг</td>
+                <td class="pb-0">100 кг</td>
+                <td class="pb-0" id="fith-item-special__first-block">123 000 ₽</td>
+            </tr>
+        </tbody>
+</table>
+</div>
+
+<div class="tittle-container">
+    <h1 class="container__tittle">Ножничный дизельный подъемник</h1>
+    <img src="img/second.png" alt="" class="second-img">
+</div>
+
+<div class="container mt-3">
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="item-tittle">Высота</th>
+            <th class="item-tittle">ГП</th>
+            <th class="item-tittle">Вес</th>
+            <th class="item-tittle">Платформа</th>
+            <th class="item-tittle" id="tittle-special-second">За месяц</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>14 м</td>
+            <td>365 кг</td>
+            <td>100 кг</td>
+            <td>2,79х1,6 м</td>
+            <td id="six-item-special__second-block">149 400 ₽</td>
+        </tr>
+        <tr>
+            <td>15 м</td>
+            <td>910 кг</td>
+            <td>100 кг</td>
+            <td>3,98x1,83 м</td>
+            <td id="seven-item-special__second-block">172 200 ₽</td>
+        </tr>
+        <tr>
+            <td class="pb-0">18 м</td>
+            <td class="pb-0">650 кг</td>
+            <td class="pb-0">100 кг</td>
+            <td class="pb-0">3,98 / 6.57х1,83 м</td>
+            <td class="pb-0" id="eight-item-special__second-block">176 700 ₽</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="tittle-container">
+    <h1 class="container__tittle">Коленчатый электрический подъемник</h1>
+    <img src="img/third.png" alt="" class="third-img">
+</div>
+
+<div class="container mt-3">
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="item-tittle">Высота</th>
+            <th class="item-tittle">ГП</th>
+            <th class="item-tittle">ГВ</th>
+            <th class="item-tittle">Вес</th>
+            <th class="item-tittle" id="tittle-special-third">За месяц</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>8 м</td>
+            <td>200 кг</td>
+            <td>5,57</td>
+            <td>100 кг</td>
+            <td id="nine-item-special__third-block">148 500 ₽</td>
+        </tr>
+        <tr>
+            <td class="pb-0">10 м</td>
+            <td class="pb-0">227 кг</td>
+            <td class="pb-0">7,62</td>
+            <td class="pb-0">100 кг</td>
+            <td class="pb-0" id="ten-item-special__third-block">195 000 ₽</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="tittle-container">
+    <h1 class="container__tittle">Коленчатый дизельный подъемник</h1>
+    <img src="img/fourth.png" alt="" class="fourth-img">
+</div>
+
+<div class="container mt-3">
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="item-tittle">Высота</th>
+            <th class="item-tittle">ГП</th>
+            <th class="item-tittle">ГВ</th>
+            <th class="item-tittle">Вес</th>
+            <th class="item-tittle">Платформа</th>
+            <th class="item-tittle" id="tittle-special-fourth">За месяц</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>16 м</td>
+            <td>230 кг</td>
+            <td>7,65</td>
+            <td>100 кг</td>
+            <td>1,83х0,76 м</td>
+            <td id="eleven-item-special__fourth-block">231 000 ₽</td>
+        </tr>
+        <tr>
+            <td>18 м</td>
+            <td>230 кг</td>
+            <td>7,7</td>
+            <td>100 кг</td>
+            <td>1.8х0.8 м</td>
+            <td id="twelve-item-special__fourth-block">289 500 ₽</td>
+        </tr>
+        <tr>
+            <td>20 м</td>
+            <td>318 кг</td>
+            <td>12,2</td>
+            <td>100 кг</td>
+            <td>1.83х0.8 м</td>
+            <td id="thirteen-item-special__fourth-block">354 500 ₽</td>
+        </tr>
+        <tr>
+            <td class="pb-0">26 м</td>
+            <td class="pb-0">320 кг</td>
+            <td class="pb-0">17,5</td>
+            <td class="pb-0">100 кг</td>
+            <td class="pb-0">2.44х0.91 м</td>
+            <td class="pb-0" id="fourteen-item-special__fourth-block">564 000 ₽</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="tittle-container">
+    <h1 class="container__tittle">Телескопический дизельный подъемник</h1>
+    <img src="img/fith.png" alt="" class="fith-img">
+</div>
+
+<div class="container mt-3">
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="item-tittle">Высота</th>
+            <th class="item-tittle">ГП</th>
+            <th class="item-tittle">Вес</th>
+            <th class="item-tittle">Платформа</th>
+            <th class="item-tittle" id="tittle-special-fith">За месяц</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>22 м</td>
+            <td>250 кг</td>
+            <td>100 кг</td>
+            <td>1.8х0.76 м</td>
+            <td id="fiveteen-item-special__fith-block">381 000 ₽</td>
+        </tr>
+        <tr>
+            <td>28 м</td>
+            <td>250 кг</td>
+            <td>100 кг</td>
+            <td>2.44х0.91 м</td>
+            <td id="sixteen-item-special__fith-block">567 000 ₽</td>
+        </tr>
+        <tr>
+            <td class="pb-0">36 м</td>
+            <td class="pb-0">250 кг</td>
+            <td class="pb-0">100 кг</td>
+            <td class="pb-0">0.91x2.44 м</td>
+            <td class="pb-0" id="seventeen-item-special__fith-block">810 000 ₽</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p class="copyright">© ARENA, 2023</p>
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
